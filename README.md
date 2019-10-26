@@ -1,5 +1,6 @@
 # Eurobot2020 WORKSPACE
 
+http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-01.png
 Repository exclusively for team Brainstorm - Middlesex University
 
 All right reserved 2019-2020
@@ -102,5 +103,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-
-![Brainstorm Robotics Logo](http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-01.png?raw=true "Middlesex University of London")
