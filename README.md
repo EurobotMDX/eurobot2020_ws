@@ -10,7 +10,7 @@ Repository exclusively for team Brainstorm - Middlesex University of London
 All rights reserved © 2020, London, UK
 
 
-## Getting Started
+## Getting Started 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -32,25 +32,57 @@ A step by step series of examples that tell you how to get a development env run
 For the versions available, see the tags of this repository and selected branches 
 
 
-# System Requirements
+# SYSTEM REQUIREMENTS
 * ROS Kinetic ONLY supports Ubuntu 16.04
 * [Ubuntu MATE ISO image, Wiki-page for ODROID](https://wiki.odroid.com/odroid-xu4/odroid-xu4)
 * OPEN SSL
 * GIT
+* bashrc file must be edited in order to run ROS locally on your PC (see section 'Installation' )
 
 
 
-# ROS documentation:
 
-## Running the ROS
+# ROS DOCUMENTATION:
 
-Explanation how to run the ROS
+## Getting started with ROS [Robot Operating System]
 
-* [ROS Kinetic for Ubuntu - wiki.ros tutorial](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+### Installation
+* [ROS Kinetic installation guide RECOMMENDED - wiki.ros tutorial](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+* [Shell script .sh installing ROS automaticly NOT RECOMMENDED FOR BEGINNERS](https://github.com/chibike/shell_scripts/blob/master/install_ros_kinetic_com.sh)
+
+
+
+### Edit bashrc in order to run ROSCORE
+Environment setup
+* ROS environment variables are automatically added to your bash session every time a new shell is launched
+```
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+* If you have more than one ROS distribution installed, ~/.bashrc must only source the setup.bash for the version you are currently using.
+
+* If you just want to change the environment of your current shell, instead of the above you can type:
+```
+source /opt/ros/kinetic/setup.bash
+```
+
+### Usage
+You must have a roscore running in order for ROS nodes to communicate. It is launched using the roscore command.
+```
+roscore
+```
+* Run ROS in separate terminal and let it be running in the background
+* It can be only one instance of ROS running on machine 
+* To terminate or close safely roscore, in the active terminal type:
+> CTRL + C
+
+### References, knowledgebase
+* [ROS Cheat Sheet](https://w3.cs.jmu.edu/spragunr/CS354/handouts/ROSCheatsheet.pdf)
 * [ROS V-Useful Tutorials for begginers - explore wiki.ros with tutorials](http://wiki.ros.org/ROS/Tutorials)
 * [ROS communication with Arduino - setup, sensors and much more tuts](http://wiki.ros.org/rosserial_arduino/Tutorials)
 * [Programming Robots with ROS O'Reilly - 427 pages eBook for download](http://marte.aslab.upm.es/redmine/files/dmsf/p_drone-testbed/170324115730_268_Quigley_-_Programming_Robots_with_ROS.pdf)
-* [ROS Cheat Sheet](https://w3.cs.jmu.edu/spragunr/CS354/handouts/ROSCheatsheet.pdf)
+
+
 
 ## ROS PACKAGES
 ### Usage
@@ -104,7 +136,7 @@ sudo service eurobot_bringup stop
 sudo service eurobot_bringup restart
 
 ```
-restarting service using bash alias (if created)
+* restarting service using bash alias (if created)
 ```
 sudo ./restart_eurobot_service.sh 
 ```
@@ -154,9 +186,14 @@ rosnode node_name info
 
 ## ROS TOPICS
 ### Usage
-Check what topics are available in ROS
+List of supported commands: (ordered by importance)
 ```
-rostopic list 
+rostopic list   <i>print information about active topics</i>
+rostopic info <topic-name>  <i>print information about active topic</i>
+rostopic echo /topic_name  <i>or</i> /my_topic/field_name   <i>print messages to screen</i>
+rostopic pub /topic_name std_msgs/String hello   <i>publish data to topic</i>
+rostopic type /topic_name  <i>print topic type</i>
+rostopic hz /topic_name    <i>display publishing rate of topic</i>
 ```
 
 ## ROS FILES
@@ -187,7 +224,7 @@ Provide convenient way to start up multiple nodes and a master, as well as other
 ```
 eurobot_bringup/launch/Eurobot_final.launch
 ```
-other launch files running packages/nodes individually or partially 
+* other launch files running packages/nodes individually or partially 
 ```
 -> minimal.launch
 -> nodepkg=”robot_drivers”
@@ -215,8 +252,8 @@ other launch files running packages/nodes individually or partially
 * In case of Arduino crash - restart the service
 * After creating python script make it executable with command: chmod +x script.py 
 * I can't compile with catkin_make: 
-... If you want to compile something you need to update the clock (time)
-... You must navigate to main workspace directory while you run the command
+...If you want to compile something you need to update the clock (time)
+...You must navigate to main workspace directory while you run the command
 
 
 
