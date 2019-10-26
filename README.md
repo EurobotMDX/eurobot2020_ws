@@ -3,12 +3,11 @@
 *[http://brainstorm.mdx.ac.uk](http://brainstorm.mdx.ac.uk) - official team website, visit to meet the team!
 
 
-# Eurobot2020 WORKSPACE
+# Eurobot 2020 WORKSPACE
 
-Repository exclusively for team Brainstorm - Middlesex University
+Repository exclusively for team Brainstorm - Middlesex University of London
 
-All right reserved 2019-2020
-Middlesex University of London
+All rights reserved © 2020, London, UK
 
 
 ## Getting Started
@@ -19,9 +18,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
-Give examples
-```
 * [Ubuntu MATE for the Raspberry Pi - web](https://ubuntu-mate.org/download/) - Download Ubuntu MATE for Raspberry Pi
 * [Ubuntu MATE for the Odroix XU-04 - web](https://wiki.odroid.com/odroid-xu4/odroid-xu4) - Download Ubuntu MATE for Odroid XU-04
 * [Ubuntu install of ROS Kinetic - web](http://wiki.ros.org/kinetic/Installation/Ubuntu) - Installation process in steps
@@ -30,23 +26,10 @@ Give examples
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+For the versions available, see the tags of this repository and selected branches 
 
 
 # System Requirements
@@ -70,6 +53,17 @@ Explanation how to run the ROS
 * [ROS Cheat Sheet](https://w3.cs.jmu.edu/spragunr/CS354/handouts/ROSCheatsheet.pdf)
 
 ## ROS Packages 
+### Usage
+Provides package list
+```
+rospackage list
+```
+
+Run this to provide dependecies to any script: 
+```
+roslaunch pckg_name launch_file_name 
+>>>roslaunch eurobot_bringup minimal.launch
+```
 
 ### Package: Upstart for ROS Robots
 This package aims to assist with creating simple platform-specific jobs to start your robot’s ROS launch files as a service when its PC/ROBOT powers up.
@@ -126,10 +120,54 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 ### Package: world_description
 
 ## ROS Nodes
+### /drive_train_controller  - driving systems, braking systems, odometry
+### /range_sensors_ros_handler_node - ultrasonic sensors
+### /robot_state_publisher - publishes robot states - ex for rviz
+### /serial_com_data_handler - Serial port connections 
+### /web_server_node - Flask
 
 ## ROS Topics
+### Usage
+Check what topics are available in ROS
+```
+rostopic list 
+```
 
 ## ROS Files
+
+
+### robot_drivers/script/robot_interface.py
+Class required to minimal run contain all necessary APIs for grippers, experiment, update_robot_score, wait_for_pull_to_start, reset_odometry
+>>> need to be initiate
+
+### robot_drivers/script/robot_interface_advanced.py
+Class with inherited methods from robot_interface.py, contains all methods need for driving to the point, waypoints, get_distance, move_linear, move_angular, move_to, 
+>>> need to be instantiated 
+
+### robot_drivers/script/eurobot_task.py
+Import all robot_interface_advanced.py methods and is the main file with driving commands for a small robot
+
+### Commands available in eurobot_task.py :
+```
+robot.update_robot_score(40.0)
+robot.open_gripper()
+robot.close_gripper()
+robot.stop_motors()
+```
+## Launch files:
+```
+eurobot_bringup/launch/Eurobot_final.launch
+```
+other launch files running packages/nodes individually or partially 
+```
+->minimal.launch
+->nodepkg=”robot_drivers”
+->nodepkg=”robot_state_publisher”
+->sensors.launch
+->web_server.launch
+->eurobot_task.launch 
+-> eurobot_task.py
+```
 
 # Network configuration:
 
@@ -144,10 +182,17 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 
 # Electronic parts list:
 
+# FAQ
+*In case of Arduino crash - restart the service
+*After creating python script make it executable with command: chmod +x script.py 
+*I can't compile with catkin_make: 
+-If you want to compile something you need to update the clock (time)
+-You must navigate to main workspace directory while you run the command
+
 
 
 # Contributors:
-
+*Visit http://brainstorm.mdx.ac.uk to meet the team
 
 
 # Sponsors:
