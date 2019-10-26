@@ -68,7 +68,7 @@ Explanation how to run the ROS
 
 ## ROS Packages 
 
-### Upstart for ROS Robots
+### Package: Upstart for ROS Robots
 This package aims to assist with creating simple platform-specific jobs to start your robot’s ROS launch files as a service when its PC/ROBOT powers up.
 
 #### Installation
@@ -77,23 +77,50 @@ The basic usage is with the install script, which can be as simple as:
 rosrun robot_upstart install eurobot_bringup/launch/base.launch
 ```
 
-This will create a job called myrobot on your machine, which launches base.launch. It will start automatically when you next start your machine, or you can bring it up and down manually:
+This will create a job called eurobot on your machine, which launches base.launch. It will start automatically when you next start your machine. 
+
+### Usage
+You can bring it up and down manually:
 
 ```
-sudo service eurobot_bringup restart
-sudo service eurobot_bringup stop
 sudo service eurobot_bringup start
+sudo service eurobot_bringup stop
+sudo service eurobot_bringup restart
+
 ```
-or using alias
+restarting service using alias
 ```
 sudo ./restart_eurobot_service.sh 
 ```
 
 
-### Turtle Bot - Let robot drive using keys
+### Package: Turtle Bot for driving using controls
+Provides teleoperation using joysticks or keyboard.
+
+#### Installation
+* [The turtlebot stack provides all the basic drivers for running and using a TurtleBot with ROS.](https://github.com/turtlebot/turtlebot)
+
+#### Usage
 ```
 roslaunch turtlebot_teleop keyboard_teleop.launch 
 ```
+### Package: eurobot_bringup
+
+### Package: navigation
+
+### Package: robot_description
+
+### Package: robot_drivers
+
+### Package: robot_grippers
+
+### Package: robot_vision
+
+### Package: sensor_drivers
+
+### Package: web_server
+
+### Package: world_description
 
 ## ROS Nodes
 
@@ -105,7 +132,10 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 
 
 
-# Robot functions:
+# Robot scripts:
+
+
+# Robot drivers:
 
 
 
@@ -118,10 +148,11 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 
 
 # Sponsors:
+- FESTO
 - Maxon Motors
 - Rapid Electronics
 - PozyX
-- FESTO
+
 
 
 
