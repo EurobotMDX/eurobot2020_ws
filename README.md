@@ -33,7 +33,7 @@ For the versions available, see the tags of this repository and selected branche
 
 
 # System Requirements
-
+* ROS Kinetic ONLY supports Ubuntu 16.04
 * [Ubuntu MATE ISO image, Wiki-page for ODROID](https://wiki.odroid.com/odroid-xu4/odroid-xu4)
 * OPEN SSL
 * GIT
@@ -54,30 +54,49 @@ Explanation how to run the ROS
 
 ## ROS PACKAGES
 ### Usage
-Provides package list
+Provides package list and info
 ```
 rospackage list
+rospackage name_pkg info
 ```
 
-Run this to provide dependecies to any script: 
+Run this to provide dependecies to any script. 
+<b>Minimal.launch provides basic robot functions essential to run any script in order of testing and development </b>
 ```
 roslaunch pckg_name launch_file_name 
->>>roslaunch eurobot_bringup minimal.launch
+roslaunch eurobot_bringup minimal.launch
 ```
 
 ### PACKAGE Upstart for ROS Robots
 This package aims to assist with creating simple platform-specific jobs to start your robot’s ROS launch files as a service when its PC/ROBOT powers up.
 
 #### Installation
-The basic usage is with the install script, which can be as simple as:
+```
+sudo apt-get install ros-kinetic-robot-upstart
+```
+* install YOUR launch file [within the src folder]
+```
+#rosrun robot_upstart install eurobot_bringup/launch/minimal.launch rosrun robot_upstart install eurobot_bringup/launch/minimal.launch --job eurobot_bringup --user root --rosdistro kinetic --logdir eurobot_bringup/logs
+```
+* to complete the installation 
+```
+sudo systemctl daemon-reload && sudo systemctl start eurobot
+```
+* to view output to terminal
+```
+sudo tail /var/log/upstart/eurobot.log -n 30
+```
+
+
+#### Usage
+* The basic usage is with the install script, which can be as simple as:
 ```
 rosrun robot_upstart install eurobot_bringup/launch/base.launch
 ```
 
 This will create a job called eurobot on your machine, which launches base.launch. It will start automatically when you next start your machine. 
 
-#### Usage
-You can bring it up and down manually:
+* You can bring it up, down and restart manually:
 
 ```
 sudo service eurobot_bringup start
@@ -85,7 +104,7 @@ sudo service eurobot_bringup stop
 sudo service eurobot_bringup restart
 
 ```
-restarting service using alias
+restarting service using bash alias (if created)
 ```
 sudo ./restart_eurobot_service.sh 
 ```
@@ -121,14 +140,12 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 
 ## ROS NODES
 ### Usage
-Provides list of nodes
+Provides list and info of nodes
 ```
 rosnode list
-```
-Provides info about node
-```
 rosnode node_name info
 ```
+
 ### NODE /drive_train_controller  - driving systems, braking systems, odometry
 ### NODE /range_sensors_ros_handler_node - ultrasonic sensors
 ### NODE /robot_state_publisher - publishes robot states - ex for rviz
@@ -198,8 +215,8 @@ other launch files running packages/nodes individually or partially
 * In case of Arduino crash - restart the service
 * After creating python script make it executable with command: chmod +x script.py 
 * I can't compile with catkin_make: 
-** If you want to compile something you need to update the clock (time)
-** You must navigate to main workspace directory while you run the command
+... If you want to compile something you need to update the clock (time)
+... You must navigate to main workspace directory while you run the command
 
 
 
