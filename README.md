@@ -1,6 +1,6 @@
 # Eurobot2020 WORKSPACE
+![Brainstorm Robotics Logo](http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-01.png?raw=true "Middlesex University of London")
 
-http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-01.png
 Repository exclusively for team Brainstorm - Middlesex University
 
 All right reserved 2019-2020
