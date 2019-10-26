@@ -1,8 +1,10 @@
 ![Brainstorm Robotics Logo](http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-05.png?raw=true "Middlesex University of London")
 
+<i>Our Credo: Show up, Deliver, Be Kind, Repeat</i>
+
 * [http://brainstorm.mdx.ac.uk](http://brainstorm.mdx.ac.uk) - official team website, visit to meet the team!
 
-<i><b>Our credo - Show up, Deliver, Be Kind, Repeat</b></i>
+
 
 # EUROBOT 2020 WORKSPACE
 
