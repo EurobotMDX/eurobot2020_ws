@@ -23,6 +23,7 @@ Middlesex University of London
 
 
 # CONTRIBUTORS:
+Szymon Sebastian Malecki (sm3383@live.mdx.ac.uk / maleckiszym@gmail.com)
 
 
 
