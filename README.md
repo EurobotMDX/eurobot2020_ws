@@ -1,7 +1,8 @@
-![Brainstorm Robotics Logo](http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-01.png?raw=true "Middlesex University of London")
+![Brainstorm Robotics Logo](http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-05.png?raw=true "Middlesex University of London")
 
 * [http://brainstorm.mdx.ac.uk](http://brainstorm.mdx.ac.uk) - official team website, visit to meet the team!
 
+<i><b>Our credo - Show up, Deliver, Be Kind, Repeat</b></i>
 
 # EUROBOT 2020 WORKSPACE
 
@@ -10,34 +11,32 @@ Repository exclusively for team Brainstorm - Middlesex University of London
 All rights reserved © 2020, London, UK
 
 
-## Getting Started 
+# GETTING STARTED
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the Eurobot project up and running on your local machine for development and testing purposes. See ROS Documentation section for notes on how to deploy and run the project on a Linux.
 
-### Prerequisites
+## Prerequisites
 
 What things you need to install the software and how to install them
 
 * [Ubuntu MATE for the Raspberry Pi - web](https://ubuntu-mate.org/download/) - Download Ubuntu MATE for Raspberry Pi
 * [Ubuntu MATE for the Odroix XU-04 - web](https://wiki.odroid.com/odroid-xu4/odroid-xu4) - Download Ubuntu MATE for Odroid XU-04
-* [Ubuntu install of ROS Kinetic - web](http://wiki.ros.org/kinetic/Installation/Ubuntu) - Installation process in steps
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
 
 
 ## Versioning
 
-For the versions available, see the tags of this repository and selected branches 
+For the versions available, see the tags of this repository and selected branches according to your role in the team.
+Keep code clean and leave comments in code or/and write brief documentation after each new feature deployed.
+
 
 
 # SYSTEM REQUIREMENTS
 * ROS Kinetic ONLY supports Ubuntu 16.04
-* [Ubuntu MATE ISO image, Wiki-page for ODROID](https://wiki.odroid.com/odroid-xu4/odroid-xu4)
-* OPEN SSL
-* GIT
-* bashrc file must be edited in order to run ROS locally on your PC (see section 'Installation' )
+* [Ubuntu MATE ISO image to download for ODROID](https://wiki.odroid.com/odroid-xu4/odroid-xu4)
+* Open SSH - to establish remote connection 
+* GIT - for version control 
+* .bashrc file must be edited beforehand in order to run ROS locally on your PC (see section 'ROS: Installation' )
 
 
 
@@ -47,7 +46,7 @@ For the versions available, see the tags of this repository and selected branche
 ## Getting started with ROS [Robot Operating System]
 
 ### Installation
-* [ROS Kinetic installation guide RECOMMENDED - wiki.ros tutorial](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+* [Ubuntu install of ROS Kinetic RECOMMENDED - wiki.ros tutorial](http://wiki.ros.org/kinetic/Installation/Ubuntu) - Installation process in steps
 * [Shell script .sh installing ROS automaticly NOT RECOMMENDED FOR BEGINNERS](https://github.com/chibike/shell_scripts/blob/master/install_ros_kinetic_com.sh)
 
 
