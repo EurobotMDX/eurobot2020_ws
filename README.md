@@ -245,7 +245,8 @@ eurobot_bringup/launch/Eurobot_final.launch
 # ROBOT DRIVERS:
 Low level code in C++, not need to be changed at all. After every change in code needs to be recompiled by catkin_make
 ## FOLDER "Includes"
-### drive_train_manager.h - Class DriveTrainManager defines methods related with driving include headers from robot_params.h 
+### FILE drive_train_manager.h 
+Class DriveTrainManager defines methods related with driving include headers from robot_params.h 
 ```
 set_motion()
 reset_encoders()
@@ -263,7 +264,8 @@ current_y
 EposDriveManager left_wheel;
 EposDriveManager right_wheel;
 ```
-### epos_drive_manager.h - Class EposDriveManager methods, definitions and 
+### FILE epos_drive_manager.h 
+Class EposDriveManager methods and definitions
 ```
 initialize(const std::string device_name, const std::string port_name);
 terminate() 
@@ -279,7 +281,8 @@ stop() // apply brakes to the wheels
 set_inverted();
 reset_inverted();
 ```
-### robot_params.h - Constance definitions of key paramiters for driving
+### FILE robot_params.h
+Constance definitions of key paramiters for driving
 ```
 // using meters, radians, etc. meteric only!
 _RB_BASE_WIDTH 0.1714 // to contact center of wheels need to be changed as well
@@ -288,23 +291,23 @@ _RB_NUM_OF_ENCODER_COUNTS 16384 // 4096 * 4 // old value
 _RB_ABS_GEAR_RATIO (4554.0 / 130.0) // need to be chaged to 1
 _RB_INVERT_RIGHT true // find out does it need to be changed or not
 ```
-### drive_train_ros_handler.h 
+### FILE drive_train_ros_handler.h 
 * Includes (imports) all nessesery libraries and header files and the Thread. Contains ROS C++ library
 
 ## FOLDER "Src"
 
-### robot_interface.py
+### FILE robot_interface.py
 Basic driving methods
 
-### robot_interface_advanced.py
+### FILE robot_interface_advanced.py
 Extension for Class robot_interface with more advanced driving methods
 
 ## FOLDER "Script"
 
-### epos_drive_manager.cpp - EposDriveManager() object
+### FILE epos_drive_manager.cpp - EposDriveManager() object
 * contains entire logic of methods defined in epos_drive_manager.h, manages EPOS devices and calculates PIDs
 
-### drive_train_ros_handler.cpp
+### FILE drive_train_ros_handler.cpp
 * it uses callbacks listaning on topics for subcribers
 * Set the publish rate for Publishers, change according to performance (now it's 10)
 ```
@@ -329,7 +332,7 @@ int publish_rate;
  ```
  
 
-### drive_train_manager.cpp
+### FILE drive_train_manager.cpp
 * DriveTrainManager instantiation with assigning EPOS devices to "USB0" and "USB1" port
 * Creation and functionality of wheel objects
 ```
