@@ -293,12 +293,41 @@ _RB_INVERT_RIGHT true // find out does it need to be changed or not
 
 ## FOLDER "Src"
 
+### robot_interface.py
+Basic driving methods
+
+### robot_interface_advanced.py
+Extension for Class robot_interface with more advanced driving methods
+
 ## FOLDER "Script"
 
 ### epos_drive_manager.cpp - EposDriveManager() object
 * contains entire logic of methods defined in epos_drive_manager.h, manages EPOS devices and calculates PIDs
 
 ### drive_train_ros_handler.cpp
+* it uses callbacks listaning on topics for subcribers
+* Set the publish rate for Publishers, change according to performance (now it's 10)
+```
+int publish_rate;
+	nh.param<int>("publish_rate", publish_rate, 10)
+ ```
+ * creates the ROS Subscribers:
+ ```
+ /cmd_vel
+ /cmd_vel_mux/input/teleop
+ /reset_drive_train
+ /initialpose
+ /update_drive_train_position
+ ```
+ * creates the ROS Publisher
+ ```
+ /odom
+ ```
+ * runs the odometry thread which publish data in while loop to /odom
+ ```
+ thread odometry_update_loop(odometry_loop)
+ ```
+ 
 
 ### drive_train_manager.cpp
 * DriveTrainManager instantiation with assigning EPOS devices to "USB0" and "USB1" port
@@ -317,8 +346,8 @@ right_wheel = EposDriveManager();
 * In case of Arduino crash - restart the service
 * After creating python script make it executable with command: chmod +x script.py 
 * I can't compile with catkin_make: 
-** If you want to compile something you need to update the clock (time)
-** You must navigate to main workspace directory while you run the command
+⋅⋅⋅If you want to compile something you need to update the clock (time)
+⋅⋅⋅You must navigate to main workspace directory while you run the command
 
 
 
