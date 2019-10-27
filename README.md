@@ -1,6 +1,5 @@
 ![Brainstorm Robotics Logo](http://www.brainstorm.mdx.ac.uk/wp-content/uploads/2018/07/LOGO-BRAINSTRORM-05.png?raw=true "Middlesex University of London")
 
-<i>Our Credo: Show up, Deliver, Be Kind, Repeat</i>
 
 * [http://brainstorm.mdx.ac.uk](http://brainstorm.mdx.ac.uk) - official team website, visit to meet the team!
 
@@ -243,8 +242,57 @@ eurobot_bringup/launch/Eurobot_final.launch
 # Robot scripts:
 
 
-# Robot drivers:
+# ROBOT DRIVERS:
+Low level code in C++ 
+## FOLDER "Includes"
+* drive_train_manager.h - <b>Class DriveTrainManager</b> defines methods related with driving include headers from robot_params.h 
+```
+set_motion()
+reset_encoders()
+reset_values()
+stop()
+set_velocity()
+update_odometry()
+current_x
+current_y
 
+```
+and defines EPOS objects assigned to the wheels, includes headers from epos_drive_manager.h 
+```
+ // epos objects
+	EposDriveManager left_wheel;
+	EposDriveManager right_wheel;
+```
+* epos_drive_manager.h - <b>Class EposDriveManager</b> methods, definitions and 
+```
+initialize(const std::string device_name, const std::string port_name);
+terminate() const;
+reset() const;
+set_rpm(const int motor_rpm) const;
+increment_position(const long delta_position) const;
+get_rpm(int &motor_rpm) const;
+get_position(int &motor_position) const;
+reset_encoders() const;
+stop() const; // apply brakes to the wheels
+
+// return true if encorer is inerted .set_inverted when creating object EPOS method
+set_inverted();
+reset_inverted();
+```
+* robot_params.h - Constance definitions of key paramiters for driving
+```
+// using meters, radians, etc. meteric only!
+#define _RB_BASE_WIDTH 0.1714 // to contact center of wheels need to be changed as well
+#define _RB_WHEEL_DIAMETER 0.07
+#define _RB_NUM_OF_ENCODER_COUNTS 16384 // 4096 * 4 // old value
+#define _RB_ABS_GEAR_RATIO (4554.0 / 130.0) // need to be chaged to 1
+#define _RB_INVERT_RIGHT true // find out does it need to be changed or not
+```
+* drive_train_ros_handler.h - Includes (imports) all nessesery libraries and header files and the Thread. Contains ROS C++ library
+## FOLDER "Src"
+
+## FOLDER "Script"
+* epos_drive_manager.cpp - EposDriveManager() object initiated, contains entire logic of methods defined in epos_drive_manager.h, manages EPOS devices and calculates PIDs
 
 
 # Electronic parts list:
@@ -278,3 +326,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
+
+<i>Our Credo: Show up, Deliver, Be Kind, Repeat</i>
