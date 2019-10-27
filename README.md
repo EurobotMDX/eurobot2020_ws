@@ -186,14 +186,14 @@ rosnode node_name info
 
 ## ROS TOPICS
 ### Usage
-List of supported commands: (ordered by importance)
+List of supported topic commands: (ordered by importance)
 ```
-rostopic list   <i>print information about active topics</i>
-rostopic info <topic-name>  <i>print information about active topic</i>
-rostopic echo /topic_name  <i>or</i> /my_topic/field_name   <i>print messages to screen</i>
-rostopic pub /topic_name std_msgs/String hello   <i>publish data to topic</i>
-rostopic type /topic_name  <i>print topic type</i>
-rostopic hz /topic_name    <i>display publishing rate of topic</i>
+rostopic list   print information about active topics
+rostopic info <topic-name>  print information about active topic
+rostopic echo /topic_name  or /my_topic/field_name   print messages to screen
+rostopic pub /topic_name std_msgs/String hello   publish data to topic
+rostopic type /topic_name  print topic type
+rostopic hz /topic_name    display publishing rate of topic
 ```
 
 ## ROS FILES
@@ -243,9 +243,9 @@ eurobot_bringup/launch/Eurobot_final.launch
 
 
 # ROBOT DRIVERS:
-Low level code in C++ 
+Low level code in C++, not need to be changed at all. After every change in code needs to be recompiled by catkin_make
 ## FOLDER "Includes"
-* drive_train_manager.h - <b>Class DriveTrainManager</b> defines methods related with driving include headers from robot_params.h 
+### drive_train_manager.h - Class DriveTrainManager defines methods related with driving include headers from robot_params.h 
 ```
 set_motion()
 reset_encoders()
@@ -257,42 +257,58 @@ current_x
 current_y
 
 ```
-and defines EPOS objects assigned to the wheels, includes headers from epos_drive_manager.h 
+* defines EPOS objects assigned to the wheels, includes headers from epos_drive_manager.h 
 ```
  // epos objects
-	EposDriveManager left_wheel;
-	EposDriveManager right_wheel;
+EposDriveManager left_wheel;
+EposDriveManager right_wheel;
 ```
-* epos_drive_manager.h - <b>Class EposDriveManager</b> methods, definitions and 
+### epos_drive_manager.h - Class EposDriveManager methods, definitions and 
 ```
 initialize(const std::string device_name, const std::string port_name);
-terminate() const;
-reset() const;
-set_rpm(const int motor_rpm) const;
-increment_position(const long delta_position) const;
-get_rpm(int &motor_rpm) const;
-get_position(int &motor_position) const;
-reset_encoders() const;
-stop() const; // apply brakes to the wheels
+terminate() 
+reset() 
+set_rpm(const int motor_rpm) 
+increment_position(const long delta_position) 
+get_rpm(int &motor_rpm) 
+get_position(int &motor_position) 
+reset_encoders() 
+stop() // apply brakes to the wheels
 
-// return true if encorer is inerted .set_inverted when creating object EPOS method
+// return true if encoder is ineserted .set_inverted when creating object EPOS method
 set_inverted();
 reset_inverted();
 ```
-* robot_params.h - Constance definitions of key paramiters for driving
+### robot_params.h - Constance definitions of key paramiters for driving
 ```
 // using meters, radians, etc. meteric only!
-#define _RB_BASE_WIDTH 0.1714 // to contact center of wheels need to be changed as well
-#define _RB_WHEEL_DIAMETER 0.07
-#define _RB_NUM_OF_ENCODER_COUNTS 16384 // 4096 * 4 // old value
-#define _RB_ABS_GEAR_RATIO (4554.0 / 130.0) // need to be chaged to 1
-#define _RB_INVERT_RIGHT true // find out does it need to be changed or not
+_RB_BASE_WIDTH 0.1714 // to contact center of wheels need to be changed as well
+_RB_WHEEL_DIAMETER 0.07
+_RB_NUM_OF_ENCODER_COUNTS 16384 // 4096 * 4 // old value
+_RB_ABS_GEAR_RATIO (4554.0 / 130.0) // need to be chaged to 1
+_RB_INVERT_RIGHT true // find out does it need to be changed or not
 ```
-* drive_train_ros_handler.h - Includes (imports) all nessesery libraries and header files and the Thread. Contains ROS C++ library
+### drive_train_ros_handler.h 
+* Includes (imports) all nessesery libraries and header files and the Thread. Contains ROS C++ library
+
 ## FOLDER "Src"
 
 ## FOLDER "Script"
-* epos_drive_manager.cpp - EposDriveManager() object initiated, contains entire logic of methods defined in epos_drive_manager.h, manages EPOS devices and calculates PIDs
+
+### epos_drive_manager.cpp - EposDriveManager() object
+* contains entire logic of methods defined in epos_drive_manager.h, manages EPOS devices and calculates PIDs
+
+### drive_train_ros_handler.cpp
+
+### drive_train_manager.cpp
+* DriveTrainManager instantiation with assigning EPOS devices to "USB0" and "USB1" port
+* Creation and functionality of wheel objects
+```
+left_wheel  = EposDriveManager();
+right_wheel = EposDriveManager();
+```
+* _RB_INVERT_RIGHT - inverssion of the wheel according to robot build
+* DriveTrainManager::update_odometry() - calculations of driving odometry 
 
 
 # Electronic parts list:
@@ -301,8 +317,8 @@ reset_inverted();
 * In case of Arduino crash - restart the service
 * After creating python script make it executable with command: chmod +x script.py 
 * I can't compile with catkin_make: 
-...If you want to compile something you need to update the clock (time)
-...You must navigate to main workspace directory while you run the command
+** If you want to compile something you need to update the clock (time)
+** You must navigate to main workspace directory while you run the command
 
 
 
