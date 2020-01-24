@@ -23,7 +23,11 @@ What things you need to install the software and how to install them
 * [Ubuntu MATE for the Raspberry Pi - web](https://ubuntu-mate.org/download/) - Download Ubuntu MATE for Raspberry Pi
 * [Ubuntu MATE for the Odroix XU-04 - web](https://wiki.odroid.com/odroid-xu4/odroid-xu4) - Download Ubuntu MATE for Odroid XU-04
 
+## DATE/TIME on Odroid - if system and hardware date/time is wrong then must be set to current date/time
+to check date use ```date```
+to check hardware date use ```sudo hwclock```
 
+Don't commit any changes to github repo if the date n time is not set correctly
 
 ## Versioning
 
