@@ -23,9 +23,9 @@ What things you need to install the software and how to install them
 * [Ubuntu MATE for the Raspberry Pi - web](https://ubuntu-mate.org/download/) - Download Ubuntu MATE for Raspberry Pi
 * [Ubuntu MATE for the Odroix XU-04 - web](https://wiki.odroid.com/odroid-xu4/odroid-xu4) - Download Ubuntu MATE for Odroid XU-04
 
-## DATE/TIME on Odroid - if system and hardware date/time is wrong then must be set to current date/time
-to check date use ```date```
-to check hardware date use ```sudo hwclock```
+## First check DATE & TIME on Odroid 
+* to check system date use ```date```
+* to check hardware date use ```sudo hwclock```
 
 Don't commit any changes to github repo if the date n time is not set correctly
 
@@ -353,10 +353,15 @@ right_wheel = EposDriveManager();
 * In case of Arduino crash - restart the service
 * After creating python script make it executable with command: chmod +x script.py 
 * I can't compile with catkin_make: 
-⋅⋅⋅If you want to compile something you need to update the clock (time)
-⋅⋅⋅You must navigate to main workspace directory while you run the command
-
-
+⋅⋅⋅ If you want to compile something you need to update the clock (time)
+⋅⋅⋅ You must navigate to main workspace directory while you run the command
+* roscore is not running, ROS can't locate ROS_MASTER ip adress
+⋅⋅⋅ edit bashrc.sh and modify lines:
+```export ROS_HOSTNAME=127.0.0.1```
+```export ROS_MASTER_URI=http://127.0.0.1:11311```
+* Roscore is running wrong workspace
+⋅⋅⋅ to check current workspace type ```echo $ROS_PACKAGE_PATH```
+⋅⋅⋅ add workspace patch to bashrc.sh file ```source /home/ros/your_workspace/devel/setup.bash```
 
 # Contributors:
 * Visit http://brainstorm.mdx.ac.uk to meet the team
