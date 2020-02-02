@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/devel
+
+Name: eigen_conversions
+Description: Description of eigen_conversions
+Version: 1.11.9
+Cflags: -I/home/ros/lidar_ws/src/geometry/eigen_conversions/include -I/usr/include/eigen3 -I/opt/ros/kinetic/share/orocos_kdl/../../include
+Libs: -L${prefix}/lib -leigen_conversions /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
+Requires: geometry_msgs std_msgs

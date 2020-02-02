@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/devel
+
+Name: kdl_conversions
+Description: Description of kdl_conversions
+Version: 1.11.9
+Cflags: -I/home/ros/lidar_ws/src/geometry/kdl_conversions/include -I/opt/ros/kinetic/share/orocos_kdl/../../include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -lkdl_conversions /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
+Requires: geometry_msgs

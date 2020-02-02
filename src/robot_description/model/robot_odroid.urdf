@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<robot name="rover">
+    <!-- i.e rotation center of the robot -->
+    <link name="base_link" />
+
+    <!-- i.e physical center of the robot -->
+    <link name="robot_center">
+        <visual>
+            <geometry>
+                <box size="0.26 0.24 0.10"/> <!-- x y z -->
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.2"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="robot_center_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="base_link"/>
+        <child link="robot_center"/>
+        <origin rpy="0 0 0" xyz="0 -0.0485 0"/>
+    </joint>
+
+    <link name="wheel_left">
+        <visual>
+            <geometry>
+                <cylinder length="0.0086" radius="0.035" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0. 0. 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="wheel_left_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="wheel_left"/>
+        <origin rpy="1.57079632679 0 1.57079632679" xyz="-0.125 -0.0185 -.0305"/>
+    </joint>
+    <link name="wheel_right">
+        <visual>
+            <geometry>
+                <cylinder length="0.0086" radius="0.035" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0. 0. 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="wheel_right_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="wheel_right"/>
+        <origin rpy="1.57079632679 0 1.57079632679" xyz="0.125 -0.0185 -.0305"/>
+    </joint>
+
+	 <link name="middle_caster">
+        <visual>
+            <geometry>
+                <sphere radius="0.017" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0. 0. 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="middle_caster_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="middle_caster"/>
+        <origin rpy="0 0 0" xyz="0.00 0.10 -0.04"/>
+    </joint>
+    
+    
+    
+
+    <!-- ultrasonic sensors -->
+    
+    <link name="ultrasonic_front">
+        <visual>
+            <geometry>
+                <box size="0.045 0.030 0.029"/>
+            </geometry>
+            <material name="green_50">
+                <color rgba="0 1 0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_front_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_front"/>
+        <origin rpy="0 0 0" xyz="0 0.075 -0.011"/>
+    </joint>
+
+    <link name="ultrasonic_front_emission_point">
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_front_emission_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_front_emission_point"/>
+        <origin rpy="0 0 1.57079632679" xyz="0 0.075 -0.011"/>
+    </joint>
+    
+    <link name="ultrasonic_back">
+        <visual>
+            <geometry>
+                <box size="0.045 0.030 0.029"/>
+            </geometry>
+            <material name="green_50">
+                <color rgba="0 1 0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_back_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_back"/>
+        <origin rpy="0 0 3.141592654" xyz="0 -0.075 -0.011"/>
+    </joint>
+
+    <link name="ultrasonic_back_emission_point">
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_back_emission_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_back_emission_point"/>
+        <origin rpy="0 0 -1.57079632679" xyz="0 -0.075 -0.011"/>
+    </joint>
+
+    <link name="ultrasonic_left">
+        <visual>
+            <geometry>
+                <box size="0.045 0.030 0.029"/>
+            </geometry>
+            <material name="green_50">
+                <color rgba="0 1 0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_left_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_left"/>
+        <origin rpy="0 0 1.57079632679" xyz="-0.075 -0.0395 -0.011"/>
+    </joint>
+
+    <link name="ultrasonic_left_emission_point">
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_left_emission_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_left_emission_point"/>
+        <origin rpy="0 0 3.141592654" xyz="-0.075 -0.0395 -0.011"/>
+    </joint>
+
+    <link name="ultrasonic_right">
+        <visual>
+            <geometry>
+                <box size="0.045 0.030 0.029"/>
+            </geometry>
+            <material name="green_50">
+                <color rgba="0 1 0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_right_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_right"/>
+        <origin rpy="0 0 -1.57079632679" xyz="0.075 -0.0395 -0.011"/>
+    </joint>
+
+    <link name="ultrasonic_right_emission_point">
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="ultrasonic_right_emission_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="ultrasonic_right_emission_point"/>
+        <origin rpy="0 0 0" xyz="0.075 -0.0395 -0.011"/>
+    </joint>
+
+    <link name="laser_scan_center_point">
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+            <material name="yellow">
+                <color rgba="1 1 0 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="laser_scan_center_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="laser_scan_center_point"/>
+        <origin rpy="0 0 0" xyz="0 0 -0.011"/>
+    </joint>
+
+    <link name="head_indication">
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+            <material name="blue">
+                <color rgba="0 0. 1 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="head_indication_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="head_indication"/>
+        <origin rpy="0 0 0" xyz="0 0.07 0.06"/>
+    </joint>
+
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <jointName>wheel_left_joint, wheel_right_joint, right_caster_joint, left_caster_joint, ultrasonic_front_joint, ultrasonic_back_joint, ultrasonic_left_joint, ultrasonic_right_joint, ultrasonic_front_emission_point, ultrasonic_back_emission_point, ultrasonic_left_emission_point, ultrasonic_right_emission_point, laser_scan_center_joint</jointName>
+        </plugin>
+    </gazebo>
+</robot>

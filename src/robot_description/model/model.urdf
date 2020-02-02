@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<robot name="rover">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.15" length="0.126"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0. 0. 0. 1"/>
+            </material>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.15" length="0.126"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="1.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    
+    <link name="front_caster">
+        <visual>
+            <geometry>
+                <sphere radius="0.025"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <sphere radius="0.025"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="0.00083" iyy="0.00083" izz="0.000167" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    
+    <joint name="front_caster_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="base_link"/>
+        <child link="front_caster"/>
+        <origin rpy="0 0 0" xyz="0.125 0 -0.025"/>
+    </joint>
+    
+    <link name="back_caster">
+        <visual>
+            <geometry>
+                <sphere radius="0.025"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <sphere radius="0.025"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="0.00083" iyy="0.00083" izz="0.000167" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    
+    <joint name="back_caster_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="base_link"/>
+        <child link="back_caster"/>
+        <origin rpy="0 0 0" xyz="-0.125 0 -0.025"/>
+    </joint>
+    
+    <link name="left_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="0.025"/>
+            </geometry>
+            <material name="silver">
+                <color rgba="0.6 0.6 0.6 1"/>
+            </material>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.025"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    
+    <joint name="left_wheel_joint" type="fixed">
+        <axis xyz="0 0 1"/>
+        <parent link="base_link"/>
+        <child link="left_wheel"/>
+        <origin rpy="1.57079632679 0 0" xyz="0 0.12 0"/>
+    </joint>
+    
+    <link name="right_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="0.0125"/>
+            </geometry>
+            <material name="silver">
+                <color rgba="0.6 0.6 0.6 1"/>
+            </material>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.0125"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    
+    <joint name="right_wheel_joint" type="fixed">
+        <axis xyz="0 0 1"/>
+        <parent link="base_link"/>
+        <child link="right_wheel"/>
+        <origin rpy="1.57079632679 0 0" xyz="0 -0.12 0"/>
+    </joint>
+
+    <link name="robo_peak_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.035" length="0.018"/>
+            </geometry>
+            <material name="yellow">
+                <color rgba="1.0 1.0 0.0 1"/>
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.035" length="0.018"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+
+    <joint name="robo_peak_joint" type="fixed">
+        <axis xyz="0 0 1"/>
+        <parent link="base_link"/>
+        <child link="robo_peak_link"/>
+        
+        <origin rpy="0 0 0" xyz="0 0 0.126"/>
+    </joint>
+
+    <link name="robot_head_indication">
+        <visual>
+            <geometry>
+                <cylinder radius="0.02" length="0.03"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 1"/>
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.02" length="0.03"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+
+    <joint name="robot_head_indication_joint" type="fixed">
+        <axis xyz="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="robot_head_indication"/>
+        
+        <origin rpy="0 0 0" xyz="0.12 0 0.126"/>
+    </joint>
+
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <jointName>front_caster_joint, back_caster_joint, left_wheel_joint, right_wheel_joint, robo_peak_joint</jointName>
+        </plugin>
+    </gazebo>
+
+</robot>
+
+
+<!--
+    <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>10</updateRate>
+            <leftJoint>left_wheel_joint</leftJoint>
+            <rightJoint>right_wheel_joint</rightJoint>
+            <torque>20</torque>
+            
+            <wheelSeparation>0.5380</wheelSeparation>
+            <wheelDiameter>0.2410</wheelDiameter>
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <robotBaseFrame>base_footprint</robotBaseFrame>
+        </plugin>
+    </gazebo>
+-->
