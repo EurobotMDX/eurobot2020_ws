@@ -7,7 +7,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/ros/lidar_ws/src/gazebo_ros_pkgs/gazebo_ros/src".split(";")
+__extended_path = "/home/ros/lidar_ws/src/gazebo_ros/src".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p
