@@ -1355,6 +1355,12 @@ eurobot_bringup_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/eurobot_bringup
 eurobot_bringup_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/eurobot_bringup
 
 //Value Computed by CMake
+eurobot_task_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/eurobot_task
+
+//Value Computed by CMake
+eurobot_task_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/eurobot_task
+
+//Value Computed by CMake
 fake_localization_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/navigation/fake_localization
 
 //Value Computed by CMake
@@ -2113,7 +2119,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=54
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=55
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -2883,7 +2889,7 @@ Q_WS_X11:INTERNAL=1
 SDL_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL_IMAGE_LIBRARY
 SDL_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
-SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread
+SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread
 YAMLCPP_CFLAGS:INTERNAL=
 YAMLCPP_CFLAGS_I:INTERNAL=
 YAMLCPP_CFLAGS_OTHER:INTERNAL=
