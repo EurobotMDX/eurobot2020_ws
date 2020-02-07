@@ -626,3 +626,5 @@ make[1]: Leaving directory '/home/ros/lidar_ws/build/CMakeFiles/CMakeTmp'
 
 The target system is: Linux - 4.15.0-70-generic - x86_64
 The host system is: Linux - 4.15.0-76-generic - x86_64
+The target system is: Linux - 4.15.0-70-generic - x86_64
+The host system is: Linux - 4.15.0-76-generic - x86_64

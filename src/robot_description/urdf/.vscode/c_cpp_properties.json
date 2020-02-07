@@ -1,46 +1,51 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "",
-        "limitSymbolsToIncludedHeaders": true
-      },
-      "includePath": [
-        "/home/ros/lidar_ws/devel/include/**",
-        "/home/ros/catkin_ws/devel/include/**",
-        "/opt/ros/kinetic/include/**",
-        "/home/ros/lidar_ws/src/navigation/amcl/include/**",
-        "/home/ros/lidar_ws/src/navigation/base_local_planner/include/**",
-        "/home/ros/simon_wp/src/beginner_tutorials/include/**",
-        "/home/ros/lidar_ws/src/navigation/carrot_planner/include/**",
-        "/home/ros/nick_ws/src/class_code/include/**",
-        "/home/ros/lidar_ws/src/navigation/clear_costmap_recovery/include/**",
-        "/home/ros/lidar_ws/src/navigation/costmap_2d/include/**",
-        "/home/ros/lidar_ws/src/navigation/dwa_local_planner/include/**",
-        "/home/ros/lidar_ws/src/geometry/eigen_conversions/include/**",
-        "/home/ros/lidar_ws/src/navigation/global_planner/include/**",
-        "/home/ros/lidar_ws/src/hector_slam/hector_geotiff/include/**",
-        "/home/ros/lidar_ws/src/hector_slam/hector_map_tools/include/**",
-        "/home/ros/lidar_ws/src/hector_slam/hector_mapping/include/**",
-        "/home/ros/lidar_ws/src/hector_slam/hector_marker_drawing/include/**",
-        "/home/ros/lidar_ws/src/geometry/kdl_conversions/include/**",
-        "/home/ros/lidar_ws/src/learing_tf/include/**",
-        "/home/ros/lidar_ws/src/navigation/map_server/include/**",
-        "/home/ros/lidar_ws/src/navigation/move_base/include/**",
-        "/home/ros/lidar_ws/src/navigation/move_slow_and_clear/include/**",
-        "/home/ros/lidar_ws/src/navigation/nav_core/include/**",
-        "/home/ros/lidar_ws/src/navigation/navfn/include/**",
-        "/home/ros/nick_ws/src/nick/include/**",
-        "/home/ros/lidar_ws/src/navigation/robot_pose_ekf/include/**",
-        "/home/ros/lidar_ws/src/robot_setup_tf/include/**",
-        "/home/ros/lidar_ws/src/robot_state_publisher/include/**",
-        "/home/ros/lidar_ws/src/navigation/rotate_recovery/include/**",
-        "/home/ros/lidar_ws/src/geometry/tf/include/**",
-        "/home/ros/lidar_ws/src/geometry/tf_conversions/include/**",
-        "/home/ros/lidar_ws/src/navigation/voxel_grid/include/**",
-        "/usr/include/**"
-      ],
-      "name": "ROS"
-    }
-  ]
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/ros/lidar_ws/devel/include/**",
+                "/home/ros/catkin_ws/devel/include/**",
+                "/opt/ros/kinetic/include/**",
+                "/home/ros/lidar_ws/src/navigation/amcl/include/**",
+                "/home/ros/lidar_ws/src/navigation/base_local_planner/include/**",
+                "/home/ros/simon_wp/src/beginner_tutorials/include/**",
+                "/home/ros/lidar_ws/src/navigation/carrot_planner/include/**",
+                "/home/ros/nick_ws/src/class_code/include/**",
+                "/home/ros/lidar_ws/src/navigation/clear_costmap_recovery/include/**",
+                "/home/ros/lidar_ws/src/navigation/costmap_2d/include/**",
+                "/home/ros/lidar_ws/src/navigation/dwa_local_planner/include/**",
+                "/home/ros/lidar_ws/src/geometry/eigen_conversions/include/**",
+                "/home/ros/lidar_ws/src/navigation/global_planner/include/**",
+                "/home/ros/lidar_ws/src/hector_slam/hector_geotiff/include/**",
+                "/home/ros/lidar_ws/src/hector_slam/hector_map_tools/include/**",
+                "/home/ros/lidar_ws/src/hector_slam/hector_mapping/include/**",
+                "/home/ros/lidar_ws/src/hector_slam/hector_marker_drawing/include/**",
+                "/home/ros/lidar_ws/src/geometry/kdl_conversions/include/**",
+                "/home/ros/lidar_ws/src/learing_tf/include/**",
+                "/home/ros/lidar_ws/src/navigation/map_server/include/**",
+                "/home/ros/lidar_ws/src/navigation/move_base/include/**",
+                "/home/ros/lidar_ws/src/navigation/move_slow_and_clear/include/**",
+                "/home/ros/lidar_ws/src/navigation/nav_core/include/**",
+                "/home/ros/lidar_ws/src/navigation/navfn/include/**",
+                "/home/ros/nick_ws/src/nick/include/**",
+                "/home/ros/lidar_ws/src/navigation/robot_pose_ekf/include/**",
+                "/home/ros/lidar_ws/src/robot_setup_tf/include/**",
+                "/home/ros/lidar_ws/src/robot_state_publisher/include/**",
+                "/home/ros/lidar_ws/src/navigation/rotate_recovery/include/**",
+                "/home/ros/lidar_ws/src/geometry/tf/include/**",
+                "/home/ros/lidar_ws/src/geometry/tf_conversions/include/**",
+                "/home/ros/lidar_ws/src/navigation/voxel_grid/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
 }

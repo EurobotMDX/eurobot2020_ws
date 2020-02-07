@@ -217,16 +217,25 @@ ixy="0" ixz="0" iyz="0"/> </inertial>
     </gazebo>
 
     <!-- differential drive plugin -->
-    <!-- <gazebo>
+    <gazebo>
         <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so"> 
-            <leftJoint>left_wheel_joint</leftJoint> 
-            <rightJoint>right_wheel_joint</rightJoint> 
+            <updateRate>20</updateRate>
+            <alwaysOn>true</alwaysOn>
+            <leftJoint>wheel_left_joint</leftJoint> 
+            <rightJoint>wheel_right_joint</rightJoint> 
             <robotBaseFrame>base_link</robotBaseFrame> 
             <wheelSeparation>0.25</wheelSeparation> 
-            <wheelDiameter>0.07</wheelDiameter> 
+            <wheelDiameter>0.2</wheelDiameter> 
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <commandTopic>cmd_vel</commandTopic>
             <publishWheelJointState>true</publishWheelJointState>
+            <legacyMode>true</legacyMode>
         </plugin>
-    </gazebo> -->
+    </gazebo>
+
+<!--  rostopic pub -1 cmd_vel geometry_msgs/Twist \ '{linear: {x: 1.0}, angular: {z: 0.5}}' -->
+
 
 
   <!-- http://wiki.ros.org/urdf/Tutorials/Using%20a%20URDF%20in%20Gazebo -->

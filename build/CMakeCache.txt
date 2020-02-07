@@ -1321,6 +1321,12 @@ cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
 
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/kinetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/kinetic/share/diagnostic_updater/cmake
+
 //Value Computed by CMake
 dwa_local_planner_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/navigation/dwa_local_planner
 
@@ -1341,6 +1347,12 @@ eigen_conversions_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp_seri
 
 //Value Computed by CMake
 eigen_conversions_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/geometry/eigen_conversions
+
+//Value Computed by CMake
+eurobot_bringup_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/eurobot_bringup
+
+//Value Computed by CMake
+eurobot_bringup_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/eurobot_bringup
 
 //Value Computed by CMake
 fake_localization_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/navigation/fake_localization
@@ -1537,6 +1549,9 @@ joint_state_publisher_gui_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/joint_state
 
 //Value Computed by CMake
 joint_state_publisher_gui_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/joint_state_publisher/joint_state_publisher_gui
+
+//The directory containing a CMake configuration file for joy.
+joy_DIR:PATH=/opt/ros/kinetic/share/joy/cmake
 
 //Value Computed by CMake
 kdl_conversions_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/geometry/kdl_conversions
@@ -1808,6 +1823,36 @@ topic_tools_DIR:PATH=/opt/ros/kinetic/share/topic_tools/cmake
 //Dependencies for the target
 trajectory_planner_ros_LIB_DEPENDS:STATIC=general;base_local_planner;
 
+//Value Computed by CMake
+turtlebot_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/turtlebot/turtlebot
+
+//Value Computed by CMake
+turtlebot_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/turtlebot/turtlebot
+
+//Value Computed by CMake
+turtlebot_bringup_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/turtlebot/turtlebot_bringup
+
+//Value Computed by CMake
+turtlebot_bringup_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/turtlebot/turtlebot_bringup
+
+//Value Computed by CMake
+turtlebot_capabilities_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/turtlebot/turtlebot_capabilities
+
+//Value Computed by CMake
+turtlebot_capabilities_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/turtlebot/turtlebot_capabilities
+
+//Value Computed by CMake
+turtlebot_description_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/turtlebot/turtlebot_description
+
+//Value Computed by CMake
+turtlebot_description_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/turtlebot/turtlebot_description
+
+//Value Computed by CMake
+turtlebot_teleop_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/turtlebot/turtlebot_teleop
+
+//Value Computed by CMake
+turtlebot_teleop_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/turtlebot/turtlebot_teleop
+
 //The directory containing a CMake configuration file for turtlesim.
 turtlesim_DIR:PATH=/opt/ros/kinetic/share/turtlesim/cmake
 
@@ -1843,6 +1888,9 @@ web_server_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/web_server
 
 //Value Computed by CMake
 web_server_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/web_server
+
+//The directory containing a CMake configuration file for xacro.
+xacro_DIR:PATH=/opt/ros/kinetic/share/xacro/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
@@ -2059,7 +2107,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=47
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=53
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -2829,7 +2877,7 @@ Q_WS_X11:INTERNAL=1
 SDL_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL_IMAGE_LIBRARY
 SDL_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
-SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread
+SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread
 YAMLCPP_CFLAGS:INTERNAL=
 YAMLCPP_CFLAGS_I:INTERNAL=
 YAMLCPP_CFLAGS_OTHER:INTERNAL=
