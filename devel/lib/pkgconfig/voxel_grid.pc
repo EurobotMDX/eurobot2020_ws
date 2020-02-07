@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/devel
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.14.5
+Cflags: -I/home/ros/lidar_ws/src/navigation/voxel_grid/include
+Libs: -L${prefix}/lib -lvoxel_grid
+Requires: roscpp

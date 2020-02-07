@@ -1,0 +1,135 @@
+{% extends 'includes/default.html' %}
+
+{% block head %}
+<style>
+    body, html
+    {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Brainstorm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="rosbridge">RosBridge</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="urdf">URDF</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Homologation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row p-2 m-0 pt-5">
+        <div class="col-lg-8 col-md-12">
+            <img src="/static/img/eurobot_map.jpg" class="img-fluid">
+            <!-- class="w-100 h-100 p-0" -->
+        </div>
+        <div class="col-lg-4 col-md-12 mt-5">
+            <div class="row mt-5 mb-5">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="robot_x">x (m)</label>
+                        <input type="number" class="form-control" id="robot_x" value="0.0">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="robot_y">y (m)</label>
+                        <input type="number" class="form-control" id="robot_y" value="0.0">
+                    </div>
+                </div>
+            
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="robot_yaw">yaw (degrees)</label>
+                        <input type="number" class="form-control" id="robot_yaw" value="0.0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 mb-5">
+                <button id="reset_odometry_btn" class="btn btn-danger w-100">Reset Encoders</button>
+            </div>
+
+            <h5 class="mb-5">Control Panel</h5>
+
+            <div class="mb-5">
+                <div class="form-group">
+                    <label for="experiment_ip">Experiment IP</label>
+                    <input type="text" class="form-control" id="experiment_ip" value="192.168.100.102">
+                </div>
+
+                <div class="form-group">
+                    <label for="big_robot_ip">Big Robot IP</label>
+                    <input id="update_info_btn" type="text" class="form-control" id="big_robot_ip">
+                </div>
+
+                <button class="btn btn-primary w-100">Update Info</button>
+            </div>
+
+            <!-- <div class="checkbox">
+                <label>
+                    <input id="gripper_action_btn" type="checkbox" data-toggle="toggle">
+                </label>
+            </div> -->
+
+            <div class="form-group mt-5">
+                <label for="gripper_open_action_btn">Gripper Action Button</label>
+                <button id="gripper_open_action_btn" type="button" class="btn btn-primary w-100">Open Gripper</button>
+                <button id="gripper_close_action_btn" type="button" class="btn btn-primary w-100 mt-3">Close Gripper</button>
+            </div>
+
+            <div class="form-group mt-5">
+                <label for="pusher_left_action_btn">Pusher Action Button</label>
+                <button id="pusher_left_action_btn" type="button" class="btn btn-primary w-100">Push Left</button>
+                <button id="pusher_right_action_btn" type="button" class="btn btn-primary w-100 mt-3">Push Right</button>
+            </div>
+            
+
+            <div class="form-group mt-5">
+                <label for="experiment_activate_action_btn">Experiment Action Button</label>
+                <button id="experiment_activate_action_btn" type="button" class="btn btn-primary w-100">Activate Experiment</button>
+                <button id="experiment_deactivate_action_btn" type="button" class="btn btn-primary w-100 mt-3">Deactivate Experiment</button>
+            </div>
+
+            <div class="form-group mt-5">
+                <label for="reset_task_btn">Eurobot Task Controls</label>
+                <button id="reset_task_btn" type="button" class="btn btn-danger w-100">Reset Tasks</button>
+                <button id="start_task_purple_btn" type="button" class="btn btn-primary w-100 mt-5">Start Task Purple</button>
+                <button id="start_task_yellow_btn" type="button" class="btn btn-primary w-100 mt-3">Start Task Yellow</button>
+
+                <button id="eurobot_kill_task_btn" type="button" class="btn btn-danger w-100 mt-5">kill Task</button>
+            </div>
+
+            <div class="form-group mt-5">
+                <label for="shutdown_btn">Robot Shutdown</label>
+                <button id="shutdown_btn" type="button" class="btn btn-danger btn-lg w-100">Shutdown</button>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+

@@ -1,0 +1,23 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"left_caster" [label="left_caster"];
+"right_caster" [label="right_caster"];
+"robot_center" [label="robot_center"];
+"laser_scan" [label="laser_scan"];
+"wheel_left" [label="wheel_left"];
+"wheel_right" [label="wheel_right"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "left_caster_joint" [label="xyz: -0.05 0.22 -0.0235 \nrpy: 0 -0 0"]
+"left_caster_joint" -> "left_caster"
+"base_link" -> "right_caster_joint" [label="xyz: 0.05 0.22 -0.0235 \nrpy: 0 -0 0"]
+"right_caster_joint" -> "right_caster"
+"base_link" -> "robot_center_joint" [label="xyz: 0 0.1 0 \nrpy: 0 -0 0"]
+"robot_center_joint" -> "robot_center"
+"robot_center" -> "laser_scan_joint" [label="xyz: 0 0 0.011 \nrpy: 0 -0 0"]
+"laser_scan_joint" -> "laser_scan"
+"base_link" -> "wheel_left_joint" [label="xyz: -0.117 0 -0.0105 \nrpy: 1.5708 -5.55112e-17 1.5708"]
+"wheel_left_joint" -> "wheel_left"
+"base_link" -> "wheel_right_joint" [label="xyz: 0.117 0 -0.0105 \nrpy: 1.5708 -5.55112e-17 1.5708"]
+"wheel_right_joint" -> "wheel_right"
+}

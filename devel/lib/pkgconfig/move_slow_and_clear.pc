@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/devel
+
+Name: move_slow_and_clear
+Description: Description of move_slow_and_clear
+Version: 1.14.5
+Cflags: -I/home/ros/lidar_ws/src/navigation/move_slow_and_clear/include
+Libs: -L${prefix}/lib -lmove_slow_and_clear
+Requires: geometry_msgs nav_core pluginlib roscpp

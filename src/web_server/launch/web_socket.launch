@@ -1,0 +1,21 @@
+<launch>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+     <arg name="port" value="8080"/>
+  </include>
+    <arg name="port" default="8000"/>
+
+    
+
+	<node name="web_server_node" pkg="web_server" type="ros_main.py" output="screen">
+		<param name="port" type="int" value="$(arg port)"/>
+	</node>
+
+<!-- urdf state publisher -->
+
+  <arg name="model" default="$(find robot_description)/urdf/ubot.urdf"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+
+</launch>

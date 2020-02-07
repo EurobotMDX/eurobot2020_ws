@@ -47,3 +47,11 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_description" TYPE FILE FILES "/home/ros/lidar_ws/src/robot_description/package.xml")
 endif()
 
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_description" TYPE DIRECTORY FILES
+    "/home/ros/lidar_ws/src/robot_description/launch"
+    "/home/ros/lidar_ws/src/robot_description/rviz"
+    "/home/ros/lidar_ws/src/robot_description/urdf"
+    )
+endif()
+

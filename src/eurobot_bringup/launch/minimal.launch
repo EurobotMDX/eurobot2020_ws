@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- Load the robot URDF model into the parameter server -->
+    <param name="robot_description" textfile="$(find robot_description)/urdf/ubot.urdf"/>
+
+    <!-- Launch robot differential drivers -->
+
+    <!-- node pkg="robot_drivers" here -->
+
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+
+    <include file="$(find eurobot_bringup)/launch/web_server.launch" />
+    <!-- include sensors.launch -->
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/install
+
+Name: nav_core
+Description: Description of nav_core
+Version: 1.14.5
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs geometry_msgs tf costmap_2d

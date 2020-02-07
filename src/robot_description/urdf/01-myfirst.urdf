@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<robot name="ubot">
+  <!-- i.e rotation center of the robot -->
+  <link name="base_link">
+    <!-- <visual>
+        <geometry>
+            <box size="0.25 0.29 0.051"/>
+        </geometry>
+        <material name="white">
+            <color rgba="1 1 1 0.2"/>
+        </material>
+      </visual> -->
+    </link>
+
+    <!-- robot_base -->
+    <!-- <link name="base_link">
+    <visual>
+        <geometry>
+            <box size="0.25 0.29 0.051"/>
+        </geometry>
+        <material name="white">
+            <color rgba="1 1 1 0.2"/>
+        </material>
+      </visual>
+    </link> -->
+  <!-- i.e physical center of the robot X Y Z -->
+  <link name="robot_center">
+      <visual>
+          <geometry>
+              <box size="0.25 0.29 0.051"/>
+          </geometry>
+          <material name="white">
+              <color rgba="1 1 1 0.2"/>
+          </material>
+      </visual>
+      <collision>
+        <geometry>
+            <box size="0.25 0.29 0.051"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1.0" />
+        <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+  </link>
+
+  <joint name="robot_center_joint" type="fixed">
+      <axis xyz="1 1 1"/>
+      <parent link="base_link"/>
+      <child link="robot_center"/>
+      <origin rpy="0 0 0" xyz="0 0.10 0"/>
+  </joint> 
+
+<!-- wheel LEFT -->
+  <link name="wheel_left">
+      <visual>
+          <geometry>
+              <cylinder length="0.0086" radius="0.035" />
+          </geometry>
+          <material name="red">
+              <color rgba="1 0. 0. 1"/>
+          </material>
+      </visual>
+<inertial>
+<mass value="0.1"/>
+<inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5"
+ixy="0" ixz="0" iyz="0"/> </inertial>
+  </link>
+  
+  <joint name="wheel_left_joint" type="continuous">
+      <axis xyz="0 0 1"/>
+      <parent link="base_link"/>
+      <child link="wheel_left"/>
+      <origin rpy="1.57079632679 0 1.57079632679" xyz="-0.117 0 -.0105"/>
+  </joint>
+
+<!-- wheel RIGHT -->
+  <link name="wheel_right">
+    <visual>
+        <geometry>
+            <cylinder length="0.0086" radius="0.035" />
+        </geometry>
+        <material name="red">
+            <color rgba="1 0. 0. 1"/>
+        </material>
+    </visual>
+    <inertial>
+<mass value="0.1"/>
+<inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5"
+ixy="0" ixz="0" iyz="0"/> </inertial>
+  </link>
+  
+  <joint name="wheel_right_joint" type="continuous">
+      <axis xyz="0 0 1"/>
+      <parent link="base_link"/>
+      <child link="wheel_right"/>
+      <origin rpy="1.57079632679 0 1.57079632679" xyz="0.117 0 -.0105"/>
+  </joint>
+
+<!-- casters -->
+<link name="left_caster">
+        <visual>
+            <geometry>
+                <sphere radius="0.017" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0. 0. 1"/>
+            </material>
+        </visual>
+              <inertial>
+        <mass value="0.1"/>
+        <inertia ixx="0.00083" iyy="0.00083" izz="0.000167"
+        ixy="0" ixz="0" iyz="0"/> 
+      </inertial>
+    </link> 
+    <!-- continuous -->
+   <joint name="left_caster_joint" type="continuous">
+        <axis xyz="0 0 1"/>
+        <parent link="base_link"/>
+        <child link="left_caster"/>
+        <origin rpy="0 0 0" xyz="-0.05 0.22 -0.0235"/>
+    </joint>
+
+    <link name="right_caster">
+        <visual>
+            <geometry>
+                <sphere radius="0.017" />
+            </geometry>
+            <material name="red">
+                <color rgba="1 0. 0. 1"/>
+            </material>
+        </visual>
+              <inertial>
+        <mass value="0.1"/>
+        <inertia ixx="0.00083" iyy="0.00083" izz="0.000167"
+        ixy="0" ixz="0" iyz="0"/> 
+      </inertial>
+    </link>
+    <joint name="right_caster_joint" type="continuous">
+        <axis xyz="0 0 1"/>
+        <parent link="base_link"/>
+        <child link="right_caster"/>
+        <origin rpy="0 0 0" xyz="0.05 0.22 -0.0235"/>
+    </joint>
+
+    <!-- Lidar - laser scan -->
+    <link name="laser_scan">
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+            <material name="yellow">
+                <color rgba="1 1 0 1"/>
+            </material>
+        </visual>
+    </link>
+    
+    <joint name="laser_scan_joint" type="fixed">
+        <axis xyz="1 1 1"/>
+        <parent link="robot_center"/>
+        <child link="laser_scan"/>
+        <origin rpy="0 0 0" xyz="0 0 0.011"/>
+    </joint>
+
+</robot>
