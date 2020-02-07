@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/gazebo_msgs_generate_messages_nodejs"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/WorldState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/LinkStates.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/ContactState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/ModelStates.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/LinkState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/ODEJointProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/ODEPhysics.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/ModelState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/msg/ContactsState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/ApplyBodyWrench.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetLinkState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/DeleteLight.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetLinkState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SpawnModel.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetLinkProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetPhysicsProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetModelState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetModelProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetLightProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetJointTrajectory.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetLinkProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetWorldProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetLightProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/JointRequest.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/BodyRequest.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/ApplyJointEffort.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetJointProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetModelState.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetJointProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/GetPhysicsProperties.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/SetModelConfiguration.js"
+  "/home/ros/lidar_ws/devel/share/gennodejs/ros/gazebo_msgs/srv/DeleteModel.js"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
