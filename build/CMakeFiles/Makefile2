@@ -2021,6 +2021,24 @@ turtlebot/turtlebot_capabilities/preinstall:
 .PHONY : turtlebot/turtlebot_capabilities/preinstall
 
 #=============================================================================
+# Directory level rules for directory ubot_simple_control
+
+# Convenience name for "all" pass in the directory.
+ubot_simple_control/all:
+
+.PHONY : ubot_simple_control/all
+
+# Convenience name for "clean" pass in the directory.
+ubot_simple_control/clean:
+
+.PHONY : ubot_simple_control/clean
+
+# Convenience name for "preinstall" pass in the directory.
+ubot_simple_control/preinstall:
+
+.PHONY : ubot_simple_control/preinstall
+
+#=============================================================================
 # Directory level rules for directory eurobot_bringup
 
 # Convenience name for "all" pass in the directory.

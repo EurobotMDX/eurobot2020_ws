@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/devel
+
+Name: ubot_simple_control
+Description: Description of ubot_simple_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

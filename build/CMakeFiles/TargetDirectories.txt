@@ -151,6 +151,13 @@
 /home/ros/lidar_ws/build/turtlebot/turtlebot_capabilities/CMakeFiles/install/local.dir
 /home/ros/lidar_ws/build/turtlebot/turtlebot_capabilities/CMakeFiles/test.dir
 /home/ros/lidar_ws/build/turtlebot/turtlebot_capabilities/CMakeFiles/edit_cache.dir
+/home/ros/lidar_ws/build/ubot_simple_control/CMakeFiles/list_install_components.dir
+/home/ros/lidar_ws/build/ubot_simple_control/CMakeFiles/install.dir
+/home/ros/lidar_ws/build/ubot_simple_control/CMakeFiles/rebuild_cache.dir
+/home/ros/lidar_ws/build/ubot_simple_control/CMakeFiles/install/strip.dir
+/home/ros/lidar_ws/build/ubot_simple_control/CMakeFiles/install/local.dir
+/home/ros/lidar_ws/build/ubot_simple_control/CMakeFiles/test.dir
+/home/ros/lidar_ws/build/ubot_simple_control/CMakeFiles/edit_cache.dir
 /home/ros/lidar_ws/build/eurobot_bringup/CMakeFiles/install.dir
 /home/ros/lidar_ws/build/eurobot_bringup/CMakeFiles/install/local.dir
 /home/ros/lidar_ws/build/eurobot_bringup/CMakeFiles/list_install_components.dir
