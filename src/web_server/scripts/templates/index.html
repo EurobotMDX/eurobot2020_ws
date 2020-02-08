@@ -44,6 +44,8 @@
             <!-- class="w-100 h-100 p-0" -->
         </div>
         <div class="col-lg-4 col-md-12 mt-5">
+            <!-- <h1 id="time_elapsed" value="0">hello world</h1> -->
+            <input type="text" class="form-control" id="time_elapsed_val" value="countdown">
             <div class="row mt-5 mb-5">
                 <div class="col-md-4">
                     <div class="form-group">
@@ -73,49 +75,18 @@
 
             <h5 class="mb-5">Control Panel</h5>
 
-            <div class="mb-5">
-                <div class="form-group">
-                    <label for="experiment_ip">Experiment IP</label>
-                    <input type="text" class="form-control" id="experiment_ip" value="192.168.100.102">
-                </div>
-
-                <div class="form-group">
-                    <label for="big_robot_ip">Big Robot IP</label>
-                    <input id="update_info_btn" type="text" class="form-control" id="big_robot_ip">
-                </div>
-
-                <button class="btn btn-primary w-100">Update Info</button>
-            </div>
-
+            
             <!-- <div class="checkbox">
                 <label>
                     <input id="gripper_action_btn" type="checkbox" data-toggle="toggle">
                 </label>
             </div> -->
 
-            <div class="form-group mt-5">
-                <label for="gripper_open_action_btn">Gripper Action Button</label>
-                <button id="gripper_open_action_btn" type="button" class="btn btn-primary w-100">Open Gripper</button>
-                <button id="gripper_close_action_btn" type="button" class="btn btn-primary w-100 mt-3">Close Gripper</button>
-            </div>
-
-            <div class="form-group mt-5">
-                <label for="pusher_left_action_btn">Pusher Action Button</label>
-                <button id="pusher_left_action_btn" type="button" class="btn btn-primary w-100">Push Left</button>
-                <button id="pusher_right_action_btn" type="button" class="btn btn-primary w-100 mt-3">Push Right</button>
-            </div>
             
-
-            <div class="form-group mt-5">
-                <label for="experiment_activate_action_btn">Experiment Action Button</label>
-                <button id="experiment_activate_action_btn" type="button" class="btn btn-primary w-100">Activate Experiment</button>
-                <button id="experiment_deactivate_action_btn" type="button" class="btn btn-primary w-100 mt-3">Deactivate Experiment</button>
-            </div>
-
             <div class="form-group mt-5">
                 <label for="reset_task_btn">Eurobot Task Controls</label>
                 <button id="reset_task_btn" type="button" class="btn btn-danger w-100">Reset Tasks</button>
-                <button id="start_task_purple_btn" type="button" class="btn btn-primary w-100 mt-5">Start Task Purple</button>
+                <button id="start_task_purple_btn" type="button" class="btn btn-primary w-100 mt-5">Start Task Blue</button>
                 <button id="start_task_yellow_btn" type="button" class="btn btn-primary w-100 mt-3">Start Task Yellow</button>
 
                 <button id="eurobot_kill_task_btn" type="button" class="btn btn-danger w-100 mt-5">kill Task</button>

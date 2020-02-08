@@ -7,6 +7,7 @@ from sensor_msgs.msg import Range
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
 
+
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 
 import json
@@ -29,6 +30,7 @@ robot_position = {
 
 pull_to_start_state = True
 robot_score = 0.0
+time_elapsed = "0"
     
 def pull_to_start_callback(msg):
     global pull_to_start_state
@@ -43,6 +45,17 @@ def robot_score_callback(msg):
     robot_score = msg.data
 
 rospy.Subscriber('robot_score', Float32, robot_score_callback)
+
+
+
+def update_time_elapsed(msg):
+    global time_elapsed
+
+    time_elapsed = msg.data
+
+rospy.Subscriber('time_elapsed', String, update_time_elapsed)
+
+
 
 def update_robot_position(odometry_msg):
     robot_pose = odometry_msg.pose.pose
@@ -111,20 +124,6 @@ def eurobot_kill_task():
     eurobot_task_cmd_pub.publish(msg)
     return "Eurobot Kill Task"
 
-@app.route("/eurobot_start_yellow")
-def eurobot_start_yellow():
-    msg = String()
-    msg.data = "start_yellow"
-    eurobot_task_cmd_pub.publish(msg)
-    return "Eurobot Start Task Yellow"
-
-@app.route("/eurobot_start_purple")
-def eurobot_start_purple():
-    msg = String()
-    msg.data = "start_purple"
-    eurobot_task_cmd_pub.publish(msg)
-    return "Eurobot Start Task Purple"
-
 @app.route("/reset_odometry")
 def reset_odometry():
     msg = Bool()
@@ -150,33 +149,15 @@ def get_pull_to_start():
     data = {"p2s":pull_to_start_state}
     return json.dumps(data)
 
-@app.route("/open_gripper")
-def open_gripper():
-    msg = String()
-    msg.data = "{s,0,0.4}{s,1,1.4}" #"{s,0,0}{s,1,3.14}"
-    serial_data_pub.publish(msg)
-    return "Gripper Opened"
 
-@app.route("/close_gripper")
-def close_gripper():
-    msg = String()
-    msg.data = "{s,0,0.8}{s,1,1.0}" #"{s,0,1}{s,1,.8}"
-    serial_data_pub.publish(msg)
-    return "Gripper Closed"
+@app.route("/get_time_elapsed")
+def get_time_elapsed():
+    global time_elapsed
+    
+    data = {"s":time_elapsed}
+    return json.dumps(data)
 
-@app.route("/push_left")
-def push_left():
-    msg = String()
-    msg.data = "{s,2,2.2}"
-    serial_data_pub.publish(msg)
-    return "Pushing Left"
 
-@app.route("/push_right")
-def push_right():
-    msg = String()
-    msg.data = "{s,2,0.6}"
-    serial_data_pub.publish(msg)
-    return "Pushing Right"
 
 @app.after_request
 def allow_cors(response):

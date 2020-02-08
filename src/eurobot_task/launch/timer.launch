@@ -1,6 +1,7 @@
 <launch>
     <master auto="start" />
 
-    <node pkg="eurobot_task" type="timer.py" name="task_timer" output="screen"></node>
+    <node pkg="eurobot_task" type="timer.py" name="task_timer" ></node>
+    <!-- output="screen" -->
     
 </launch>

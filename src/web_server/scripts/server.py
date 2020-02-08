@@ -29,22 +29,6 @@ def urdf():
     return render_template("urdf.html", logged_in=False)
 
 
-@app.route("/activate_experiment")
-def activate_experiment():
-    global should_activate_experiment
-    should_activate_experiment = True
-    return "Experiment Activated"
-
-@app.route("/deactivate_experiment")
-def deactivate_experiment():
-    global should_activate_experiment
-    should_activate_experiment = False
-    return "Experiment Deactivated"
-
-@app.route("/start_experiment")
-def start_experiment():
-    global should_activate_experiment
-    return "{{" + str(should_activate_experiment) + "}}"
 
 @app.route("/test")
 def test():

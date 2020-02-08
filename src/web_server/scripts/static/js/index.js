@@ -22,14 +22,6 @@ var eurobot_kill_task_btn = document.getElementById("eurobot_kill_task_btn");
 var start_task_purple_btn = document.getElementById("start_task_purple_btn");
 var start_task_yellow_btn = document.getElementById("start_task_yellow_btn");
 
-var gripper_open_action_btn  = document.getElementById("gripper_open_action_btn");
-var gripper_close_action_btn = document.getElementById("gripper_close_action_btn");66
-
-var pusher_left_action_btn  = document.getElementById("pusher_left_action_btn");
-var pusher_right_action_btn = document.getElementById("pusher_right_action_btn");
-
-var experiment_activate_action_btn  = document.getElementById("experiment_activate_action_btn");
-var experiment_deactivate_action_btn = document.getElementById("experiment_deactivate_action_btn");
 
 var update_info_btn = document.getElementById("update_info_btn");
 
@@ -39,8 +31,6 @@ var robot_yaw = document.getElementById("robot_yaw");
 
 var reset_odometry_btn = document.getElementById("reset_odometry_btn");
 
-var experiment_ip_input = document.getElementById("experiment_ip");
-experiment_ip_input.value = "192.168.100.102";
 
 function update_robot_position()
 {
@@ -52,6 +42,23 @@ function update_robot_position()
     });
 }
 
+var time_elapsed_val = document.getElementById("time_elapsed_val");
+
+function update_time_elapsed()
+{
+    getJSON(window.location.origin + "/get_time_elapsed", (status, xhr)=>{
+        var data = xhr.response;
+        time_elapsed   = data;
+        // console.log(time_elapsed);
+        // JSON.stringify(time_elapsed);
+        time_elapsed_val.value = JSON.stringify(time_elapsed);
+        
+    });
+}
+
+setInterval(update_time_elapsed, 1000);
+
+
 setInterval(update_robot_position, 1000);
 
 reset_odometry_btn.onclick = function()
@@ -60,47 +67,7 @@ reset_odometry_btn.onclick = function()
     getJSON(window.location.origin + "/reset_odometry" + q, ()=>{});
 }
 
-gripper_open_action_btn.onclick = function()
-{
-    var q = "?t=" + date_object.getTime();
-    getJSON(window.location.origin + "/open_gripper" + q, ()=>{});
-}
 
-gripper_close_action_btn.onclick = function()
-{
-    var q = "?t=" + date_object.getTime();
-    getJSON(window.location.origin + "/close_gripper" + q, ()=>{});
-}
-
-pusher_left_action_btn.onclick = function()
-{
-    var q = "?t=" + date_object.getTime();
-    getJSON(window.location.origin + "/push_left" + q, ()=>{});
-}
-
-pusher_right_action_btn.onclick = function()
-{
-    var q = "?t=" + date_object.getTime();
-    getJSON(window.location.origin + "/push_right" + q, ()=>{});
-}
-
-experiment_activate_action_btn.onclick = function()
-{
-    var q = "?t=" + date_object.getTime();
-    getJSON("http://" + experiment_ip_input.value + "/activate" + q, ()=>{});
-}
-
-experiment_deactivate_action_btn.onclick = function()
-{
-    var q = "?t=" + date_object.getTime();
-    getJSON("http://" + experiment_ip_input.value + "/deactivate" + q, ()=>{});
-}
-
-update_info_btn.onclick = function()
-{
-    var q = "?t=" + date_object.getTime();
-    getJSON(window.location.origin + "/update_info" + q, ()=>{});
-}
 
 reset_task_btn.onclick = function()
 {

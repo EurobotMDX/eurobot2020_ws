@@ -20,7 +20,7 @@ if __name__ == "__main__":
         rospy.init_node("task_timer", anonymous=False, disable_signals=True)
         pub = rospy.Publisher('time_elapsed',String , queue_size=10)
 
-        stopwatch(10)
+        stopwatch(100)
 
         rospy.loginfo("ctrl-c to terminate")
         rospy.spin()
