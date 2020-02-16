@@ -69,7 +69,10 @@ serial_data_pub = rospy.Publisher('serial_data_handler_msg', String, queue_size=
 reset_drive_train_pub = rospy.Publisher('/reset_drive_train', Bool, queue_size=10)
 eurobot_task_cmd_pub = rospy.Publisher('/eurobot_task_cmd', String, queue_size=10)
 
-rospy.Subscriber("odom", Odometry, update_robot_position)
+# rospy.Subscriber("odom", Odometry, update_robot_position)
+
+rospy.Subscriber("/ubot/base_controller/odom", Odometry, update_robot_position)
+
 
 @app.route("/reset_task")
 def reset_task():

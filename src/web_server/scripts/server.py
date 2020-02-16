@@ -1,6 +1,6 @@
 import os, sys
 sys.path.insert(0,os.path.dirname(os.path.realpath(__file__)))
-
+import matplotlib.pyplot as plt
 import time
 import random
 from server_config import *
@@ -23,6 +23,19 @@ def index():
 @app.route("/rosbridge")
 def rosbridge():
     return render_template("rosbridge.html", logged_in=False)
+
+@app.route("/plot")
+def plot():
+    left = [1, 2, 3, 4, 5]
+    height = [10, 24, 36, 40, 5]
+    tick_label = ['one', 'two', 'three', 'four', 'five']
+    plt.bar(left, height, tick_label=tick_label, width=0.8, color=['red', 'green'])
+    plt.ylabel('y - axis')
+    plt.xlabel('x - axis')
+    plt.title('Eurobot bar chart')
+    plt.savefig('/static/img/plot.png')
+    return render_template("plot.html", url='../static/img/plot.png')
+
 
 @app.route("/urdf")
 def urdf():

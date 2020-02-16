@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <!-- remap -->
+    <param name="initial_pose_x" value="0.0" />
+    <param name="initial_pose_y" value="0.0" />
+    <param name="initial_pose_z" value="0.0" />
+
+
+
+    <!-- not finished, need to be done -->
+
+    </node>
+</launch>

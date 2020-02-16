@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/devel
+
+Name: robot_drivers
+Description: Description of robot_drivers
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

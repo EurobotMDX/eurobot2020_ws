@@ -40,6 +40,13 @@ function update_robot_position()
         robot_y.value   = (data.y).toFixed(5);
         robot_yaw.value = ((data.yaw / Math.PI) * 180.0).toFixed(5);
     });
+
+    // let c = document.getElementById("myCanvas");
+    // let ctx = c.getContext("2d");
+    // ctx.beginPath();
+    // ctx.moveTo(0, 0);
+    // ctx.lineTo(robot_x.value, robot_y.value);
+    // ctx.stroke();
 }
 
 var time_elapsed_val = document.getElementById("time_elapsed_val");

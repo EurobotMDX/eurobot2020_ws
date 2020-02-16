@@ -1689,6 +1689,15 @@ robot_description_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/robot_description
 robot_description_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/robot_description
 
 //Value Computed by CMake
+robot_drivers_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/robot_drivers
+
+//Dependencies for the target
+robot_drivers_LIB_LIB_DEPENDS:STATIC=general;tf;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;EposCmd;
+
+//Value Computed by CMake
+robot_drivers_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/robot_drivers
+
+//Value Computed by CMake
 robot_pose_ekf_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/navigation/robot_pose_ekf
 
 //Value Computed by CMake
@@ -2889,7 +2898,7 @@ Q_WS_X11:INTERNAL=1
 SDL_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL_IMAGE_LIBRARY
 SDL_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
-SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread
+SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread
 YAMLCPP_CFLAGS:INTERNAL=
 YAMLCPP_CFLAGS_I:INTERNAL=
 YAMLCPP_CFLAGS_OTHER:INTERNAL=
