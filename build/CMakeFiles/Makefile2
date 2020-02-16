@@ -2039,6 +2039,24 @@ ubot_simple_control/preinstall:
 .PHONY : ubot_simple_control/preinstall
 
 #=============================================================================
+# Directory level rules for directory check_obstacle
+
+# Convenience name for "all" pass in the directory.
+check_obstacle/all:
+
+.PHONY : check_obstacle/all
+
+# Convenience name for "clean" pass in the directory.
+check_obstacle/clean:
+
+.PHONY : check_obstacle/clean
+
+# Convenience name for "preinstall" pass in the directory.
+check_obstacle/preinstall:
+
+.PHONY : check_obstacle/preinstall
+
+#=============================================================================
 # Directory level rules for directory eurobot_bringup
 
 # Convenience name for "all" pass in the directory.
@@ -4386,6 +4404,24 @@ navigation/map_server/CMakeFiles/_run_tests_map_server_rostest_test_rtest.xml.di
 clean: navigation/map_server/CMakeFiles/_run_tests_map_server_rostest_test_rtest.xml.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory sensor_drivers
+
+# Convenience name for "all" pass in the directory.
+sensor_drivers/all:
+
+.PHONY : sensor_drivers/all
+
+# Convenience name for "clean" pass in the directory.
+sensor_drivers/clean:
+
+.PHONY : sensor_drivers/clean
+
+# Convenience name for "preinstall" pass in the directory.
+sensor_drivers/preinstall:
+
+.PHONY : sensor_drivers/preinstall
 
 #=============================================================================
 # Directory level rules for directory hector_slam/hector_compressed_map_transport

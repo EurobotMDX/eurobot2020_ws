@@ -5,4 +5,5 @@
 	<node name="web_server_node" pkg="web_server" type="ros_main.py" output="screen">
 		<param name="port" type="int" value="$(arg port)"/>
 	</node>
+	 <include file="$(find eurobot_task)/launch/timer.launch" />
 </launch>

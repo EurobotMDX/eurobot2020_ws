@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find sensor_drivers)/launch/lidar_sim.launch" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sensor_drivers)/rviz/rplidar.rviz" />
+</launch>

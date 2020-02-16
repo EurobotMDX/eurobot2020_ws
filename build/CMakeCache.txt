@@ -1285,6 +1285,12 @@ carrot_planner_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/navigation/carrot_planne
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 
+//Value Computed by CMake
+check_obstacle_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/check_obstacle
+
+//Value Computed by CMake
+check_obstacle_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/check_obstacle
+
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
 
@@ -1778,6 +1784,12 @@ rotate_recovery_LIB_DEPENDS:STATIC=general;base_local_planner;general;trajectory
 //Value Computed by CMake
 rotate_recovery_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/navigation/rotate_recovery
 
+//Value Computed by CMake
+sensor_drivers_BINARY_DIR:STATIC=/home/ros/lidar_ws/build/sensor_drivers
+
+//Value Computed by CMake
+sensor_drivers_SOURCE_DIR:STATIC=/home/ros/lidar_ws/src/sensor_drivers
+
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
 
@@ -2128,7 +2140,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=55
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=57
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -2898,7 +2910,7 @@ Q_WS_X11:INTERNAL=1
 SDL_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL_IMAGE_LIBRARY
 SDL_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
-SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread
+SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread
 YAMLCPP_CFLAGS:INTERNAL=
 YAMLCPP_CFLAGS_I:INTERNAL=
 YAMLCPP_CFLAGS_OTHER:INTERNAL=

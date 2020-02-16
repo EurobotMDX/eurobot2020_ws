@@ -1,0 +1,8 @@
+prefix=/home/ros/lidar_ws/devel
+
+Name: check_obstacle
+Description: Description of check_obstacle
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

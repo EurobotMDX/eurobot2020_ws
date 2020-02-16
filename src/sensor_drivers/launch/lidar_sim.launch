@@ -1,0 +1,10 @@
+<launch>
+    <arg name="publish_rate"  value="15"/>
+
+    <include file="$(find sensor_drivers)/launch/serial_com_handler.launch" />
+
+	<!-- Launch Lazer Scanner -->
+	<node name="range_sensors_ros_handler_node" pkg="sensor_drivers" type="range_sensors_ros_handler.py" output="screen">
+		<param name="publish_rate" type="double" value="$(arg publish_rate)"/>
+	</node>
+</launch>

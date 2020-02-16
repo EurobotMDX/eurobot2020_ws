@@ -1,0 +1,29 @@
+
+                -- -- PROTECTED BY BLINK INC 2018 -- --
+    
+                -- -- DO NOT USE WITHOUT PERMISSION -- --
+
+The Python modules in this package were written in-house by Blink's Chibuike Okpaluba
+
+Please note that the use/modification/distribution of concepts/programs used
+in this package are subject to an agreement from the {@author Chibuike Okpaluba}
+
+
+
+                -- -- contacts -- --
+Use: https://www.chibuikepraise.com/ , or
+Mail:
+    Name: Chibuike Okpaluba
+    Email: co607@live.mdx.ac.uk
+
+    Subject: Vector Illustration Processing in Python FDD
+
+
+
+## ## ##
+
+if _understood: 
+    print ("Thank you for understanding!!!")
+else:
+    print ("Legal actions would be enforced!")
+    print ("Haaaaaa!!!")

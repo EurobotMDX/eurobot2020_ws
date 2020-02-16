@@ -4,6 +4,10 @@ import time
 import rospy
 
 from std_msgs.msg import String
+from geometry_msgs.msg import Twist
+
+
+
 
 def stopwatch(seconds):
     start = time.time()
@@ -15,15 +19,49 @@ def stopwatch(seconds):
         pub.publish(data="time elapsed: %02d" % elepsed)
         time.sleep(1)
 
-if __name__ == "__main__":
-     while not rospy.is_shutdown():
+
+        
+def shutdown():
+    # Always stop the robot when shutting down the node.
+    rospy.loginfo("Stopping the robot...")
+    cmd_vel.publish(Twist())
+    rospy.sleep(1)
+
+    
+
+
+if __name__ == '__main__':
+    try:
+        # Give the node a name
         rospy.init_node("task_timer", anonymous=False, disable_signals=True)
+        cmd_vel = rospy.Publisher('/cmd_vel', Twist, queue_size=5)
+        
         pub = rospy.Publisher('time_elapsed',String , queue_size=10)
+        stopwatch(10)
 
-        stopwatch(100)
 
-        rospy.loginfo("ctrl-c to terminate")
-        rospy.spin()
-        rospy.loginfo("terminating....")
+        # Set rospy to execute a shutdown function when exiting
+        rospy.on_shutdown(shutdown)
+
+        # Stop the robot.
+        cmd_vel.publish(Twist())
+        
+        shutdown()
+        
+    except rospy.ROSInterruptException:
+        rospy.loginfo("Timer node terminated.")
+
+
+
+
+
+# if __name__ == "__main__":
+#      while not rospy.is_shutdown():
+        
+        
+
+#         rospy.loginfo("ctrl-c to terminate")
+#         rospy.spin()
+#         rospy.loginfo("terminating....")
     
 
