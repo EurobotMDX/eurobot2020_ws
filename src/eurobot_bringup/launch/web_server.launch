@@ -1,9 +1,44 @@
 <launch>
     <arg name="port" default="8000"/>
 
+		<!-- new model xacro -->
+		<!--Robot Description from URDF-->
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find robot_description)/urdf/ubot.xacro"/>  
+
+
+
+
+
+		<!--Gazebo empty world launch file-->
+	<!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
+			<arg name="debug" value="false" />
+			<arg name="gui" value="true" />
+			<arg name="paused" value="false"/>
+			<arg name="use_sim_time" value="false"/>
+			<arg name="headless" value="false"/>
+			<arg name="verbose" value="true"/>
+		<arg name="world_name" value="$(find robot_description)/worlds/eurobot_clean_table.world" />
+	</include> -->
+
+    <!-- map server -->
+  <!-- <node pkg="map_server" type="map_server" name="map_server"
+        args="$(find robot_description)/maps/map_02.yaml" /> -->
+
+  <!--Gazebo Simulator-->
+  <!-- <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model ubot -verbose" output="screen"/> -->
+
 	<!-- Launch Web Server -->
 	<node name="web_server_node" pkg="web_server" type="ros_main.py" output="screen">
 		<param name="port" type="int" value="$(arg port)"/>
 	</node>
+
 	 <include file="$(find eurobot_task)/launch/timer.launch" />
+
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
+
+	 <!-- added controls -->
+   <!-- <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
+        <remap from="/cmd_vel" to="/ubot/base_controller/cmd_vel"/>
+    </node> -->
 </launch>

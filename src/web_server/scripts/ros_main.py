@@ -64,32 +64,16 @@ def update_robot_position(odometry_msg):
     robot_position["x"] = robot_pose.position.x
     robot_position["y"] = robot_pose.position.y
 
-#["{s,0,0}{s,1,3.14}", "{s,0,1}{s,1,.8}", "{s,0,0}{s,1,3.14}"]
 serial_data_pub = rospy.Publisher('serial_data_handler_msg', String, queue_size=10)
-reset_drive_train_pub = rospy.Publisher('/reset_drive_train', Bool, queue_size=10)
-eurobot_task_cmd_pub = rospy.Publisher('/eurobot_task_cmd', String, queue_size=10)
+# reset_drive_train_pub = rospy.Publisher('/reset_drive_train', Bool, queue_size=10)
+# eurobot_task_cmd_pub = rospy.Publisher('/eurobot_task_cmd', String, queue_size=10)
 
 # rospy.Subscriber("odom", Odometry, update_robot_position)
 
 rospy.Subscriber("/ubot/base_controller/odom", Odometry, update_robot_position)
 
 
-@app.route("/reset_task")
-def reset_task():
-    eurobot_task_cmd_pub.publish(String("reset"))
-    return "Reseting Task"
 
-@app.route("/test_robot")
-def test_robot():
-    try:
-        side = request.args.get("side").decode("utf-8")
-        cmd = "test_{}".format(side)
-        rospy.loginfo("testing with command {}".format(cmd))
-        eurobot_task_cmd_pub.publish(String(cmd))
-    except:
-        pass
-        
-    return "Testing Robot"
 
 @app.route("/start_task")
 def start_task():
@@ -157,7 +141,7 @@ def get_pull_to_start():
 def get_time_elapsed():
     global time_elapsed
     
-    data = {"s":time_elapsed}
+    data = {"time":time_elapsed}
     return json.dumps(data)
 
 

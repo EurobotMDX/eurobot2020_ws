@@ -28,11 +28,20 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="urdf">URDF</a>
+                    <a class="nav-link" href="https://pantor.github.io/ros-control-center/">ROS CONTROL CENTER</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="plot">Plot</a>
+                    <a class="nav-link" href="urdf">URDF</a>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav float-md-right">
+                <li class="nav-item">
+                    <input type="text" class="form-control" id="time_elapsed_val" value="0.0">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">X</a>
                 </li>
             </ul>
         </div>
@@ -40,15 +49,13 @@
 
     <div class="row p-2 m-0 pt-5">
         <div class="col-lg-8 col-md-12">
-            <img src="/static/img/eurobot_map.jpg" class="img-fluid">
-            <canvas id="myCanvas" width="300" height="200" style="border: 1px solid #d3d3d3;">
+            <canvas id="demoCanvas" width="700" height="471" style="border: 1px solid red; background: url('/static/img/eurobot_map.jpg')">
             your browser does not support html5 canvas tag</canvas>
             <!-- class="w-100 h-100 p-0" -->
         </div>
-        <div class="col-lg-4 col-md-12 mt-5">
+        <div class="col-lg-4 col-md-12">
             <!-- <h1 id="time_elapsed" value="0">hello world</h1> -->
-            <input type="text" class="form-control" id="time_elapsed_val" value="countdown">
-            <div class="row mt-5 mb-5">
+            <div class="row mb-5">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="robot_x">x (m)</label>
@@ -71,7 +78,7 @@
                 </div>
             </div>
 
-            <div class="mt-5 mb-5">
+            <div class="mb-5">
                 <button id="reset_odometry_btn" class="btn btn-danger w-100">Reset Encoders</button>
             </div>
 
@@ -85,11 +92,11 @@
             </div> -->
 
             
-            <div class="form-group mt-5">
+            <div class="form-group">
                 <label for="reset_task_btn">Eurobot Task Controls</label>
                 <button id="reset_task_btn" type="button" class="btn btn-danger w-100">Reset Tasks</button>
-                <button id="start_task_purple_btn" type="button" class="btn btn-primary w-100 mt-5">Start Task Blue</button>
-                <button id="start_task_yellow_btn" type="button" class="btn btn-primary w-100 mt-3">Start Task Yellow</button>
+                <!-- <button id="start_task_purple_btn" type="button" class="btn btn-primary w-100 mt-5">Start Task Blue</button> -->
+                <!-- <button id="start_task_yellow_btn" type="button" class="btn btn-primary w-100 mt-3">Start Task Yellow</button> -->
 
                 <button id="eurobot_kill_task_btn" type="button" class="btn btn-danger w-100 mt-5">kill Task</button>
             </div>

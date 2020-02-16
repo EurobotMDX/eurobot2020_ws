@@ -16,7 +16,7 @@ def stopwatch(seconds):
     while elepsed < seconds:
         elepsed = time.time() - start
         rospy.loginfo("loop cycle time: %f, seconds count: %02d" % (time.clock(), elepsed))
-        pub.publish(data="time elapsed: %02d" % elepsed)
+        pub.publish(data="%02d" % elepsed)
         time.sleep(1)
 
 
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         cmd_vel = rospy.Publisher('/cmd_vel', Twist, queue_size=5)
         
         pub = rospy.Publisher('time_elapsed',String , queue_size=10)
-        stopwatch(10)
+        stopwatch(100)
 
 
         # Set rospy to execute a shutdown function when exiting
