@@ -1,61 +1,24 @@
 <launch>
-<!-- 
-    <master auto="start"/>
+
+  <master auto="start"/>
 
 	<arg name="publish_rate"    default="15"/>
 	<arg name="global_frame_id" default="map"/>
 	<arg name="odom_frame_id"   default="odom"/>
-	<arg name="base_frame_id"   default="base_link"/> -->
+	<arg name="base_frame_id"   default="base_link"/>
 
-    <!-- Set Motor Parameters from robot_drivers-->
-	<!-- <param name="base_frame_id" type="string" value="$(arg base_frame_id)"/>
-	<param name="odom_frame_id" type="string" value="$(arg odom_frame_id)"/> -->
+  <!-- Set Motor Parameters from robot_drivers-->
+	<param name="base_frame_id" type="string" value="$(arg base_frame_id)"/>
+	<param name="odom_frame_id" type="string" value="$(arg odom_frame_id)"/>
 
-    <!-- new model xacro -->
-    <!--Robot Description from URDF-->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find robot_description)/urdf/ubot.xacro"/>  
-
-
-    <!-- Launch robot differential drivers -->
-	<!-- <node pkg="robot_drivers" type="drive_train_ros_handler_node" name="drive_train_controller" output="screen">
+  <!-- Launch robot differential drivers -->
+	<node pkg="robot_drivers" type="drive_train_ros_handler_node" name="drive_train_controller" output="screen">
 		<rosparam file="$(find robot_description)/config/robot_config.yaml" command="load" />
 		<param name="publish_rate"   type="double" value="$(arg publish_rate)"/>
 		<param name="base_frame_id"  type="string" value="$(arg base_frame_id)"/>
 		<param name="odom_frame_id"  type="string" value="$(arg odom_frame_id)"/>
 		<param name="global_frame_id"  type="string" value="$(arg global_frame_id)"/>
-	</node> -->
-
-
-
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
-
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
-
-  <!--Gazebo empty world launch file-->
-  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    	<arg name="debug" value="false" />
-    	<arg name="gui" value="true" />
-    	<arg name="paused" value="false"/>
-    	<arg name="use_sim_time" value="false"/>
-    	<arg name="headless" value="false"/>
-    	<arg name="verbose" value="true"/>
-      <arg name="world_name" value="$(find robot_description)/worlds/eurobot_table.world" />
-  </include> -->
-
-    <!-- map server -->
-  <!-- <node pkg="map_server" type="map_server" name="map_server" -->
-        <!-- args="$(find robot_description)/maps/closed_room.map.yaml" /> -->
-  <!-- https://kiranpalla.com/autonomous-navigation-ros-differential-drive-robot-simulation/creating-map-using-laser-scanner-and-gmapping/ -->
-
-  <!--Gazebo Simulator-->
-  <!-- <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model ubot -verbose" output="screen"/> -->
-
-
-    <include file="$(find eurobot_bringup)/launch/web_server.launch" />
-
-    <!-- include sensors.launch -->
-
-     <include file="$(find eurobot_task)/launch/timer.launch" />
+	</node>
 
 </launch>
 
